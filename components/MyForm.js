@@ -11,7 +11,7 @@ export function MyForm() {
     event.preventDefault();
     setIsLoading(true);
 
-    socket.timeout(1000).emit('sendMessage', {to: to, message: value}, () => {
+    socket.timeout(1000).emit('sendMessageToServer', {to: to, message: value}, () => {
       setIsLoading(false);
     });
   }
@@ -19,7 +19,7 @@ export function MyForm() {
   function connect() {
     socket.connect();
     setIsLoading(true);
-    socket.timeout(1000).emit('userConnect', {customerId: from}, () => {
+    socket.timeout(1000).emit('userConnect', {userId: from}, () => {
       setIsLoading(false);
     });
   }
