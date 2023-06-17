@@ -17,19 +17,19 @@ export default function App() {
       setIsConnected(false);
     }
 
-    function onFooEvent(value) {
-      console.log("onFooEvent", value)
+    function onReceiveMessage(value) {
+      console.log("onReceiveMessage", value)
       setFooEvents(previous => [...previous, value]);
     }
 
     socket.on('connect', onConnect);
     socket.on('disconnect', onDisconnect);
-    socket.on('chat message', onFooEvent);
+    socket.on('receiveMessage', onReceiveMessage);
 
     return () => {
       socket.off('connect', onConnect);
       socket.off('disconnect', onDisconnect);
-      socket.off('chat message', onFooEvent);
+      socket.off('receiveMessage', onReceiveMessage);
     };
   }, []);
 
