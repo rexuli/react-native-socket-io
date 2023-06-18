@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AwesomeProject",
-    "slug": "AwesomeProject",
+    "name": "react-native-socket-io",
+    "slug": "react-native-socket-io",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
